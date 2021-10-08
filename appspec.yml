@@ -3,7 +3,6 @@ os: linux
 files:
   - source: /
     destination: /home/work/app
-    file_exists_behavior: OVERWRITE
 hooks:
   ApplicationStop:
     - location: deploy/stop_app.sh
