@@ -5,15 +5,19 @@ files:
     destination: /home/work/app
 hooks:
   ApplicationStop:
-    - location: deploy/stop_server.sh
+    - location: deploy/stop_app.sh
       timeout: 300
       runas: root
   BeforeInstall:
     - location: deploy/remove_source.sh
       timeout: 300
       runas: root
+  AfterInstall:
+    - location: deploy/install_dependencies.sh
+      timeout: 300
+      runas: root
   ApplicationStart:
-    - location: deploy/start_server.sh
+    - location: deploy/start_app.sh
       timeout: 300
       runas: root
   ValidateService:
