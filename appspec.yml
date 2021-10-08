@@ -9,6 +9,10 @@ hooks:
     - location: deploy/stop_app.sh
       timeout: 300
       runas: root
+  BeforeInstall:
+    - location: deploy/remove_source.sh
+      timeout: 300
+      runas: root
   AfterInstall:
     - location: deploy/install_dependencies.sh
       timeout: 300
