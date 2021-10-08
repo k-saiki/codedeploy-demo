@@ -10,7 +10,7 @@ define("port", default=80, help="run on the given port", type=int)
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write("Hello, world!!!")
+        self.write("Hello, CodeDeploy")
     def head(self):
         self.set_status(200)
 
